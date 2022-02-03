@@ -18,6 +18,7 @@ on:
     types:
       - opened
       - labeled
+  workflow_dispatch:
       
 jobs:
   # This workflow contains a single job called "build"
