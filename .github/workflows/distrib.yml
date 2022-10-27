@@ -20,4 +20,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: windows version
-        run: ver
+        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
