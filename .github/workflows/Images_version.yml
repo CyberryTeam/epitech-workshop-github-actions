@@ -1,0 +1,27 @@
+name: Images_version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  alpine:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    steps:
+      - name: display version
+        run: cat /etc/os-release | grep "VERSION_ID" | cut -c 12-
+  centos:
+    runs-on: ubuntu-latest
+    container:
+      image: centos:latest
+    steps:
+      - name: display version
+        run: cat /etc/os-release | grep "VERSION_ID" | cut -c 12-
+  fedora:
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+      - name: display version
+        run: cat /etc/os-release | grep "VERSION_ID" | cut -c 12-
