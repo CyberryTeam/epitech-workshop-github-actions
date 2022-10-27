@@ -24,7 +24,7 @@ jobs:
       nginx:
         image: nginx:latest
         ports:
-          - 4242:8080
+          - 4242:80
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
