@@ -30,4 +30,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Show release version
-        run: cat /etc/os-release
+        run: cat /etc/os-release | grep "VERSION_ID" | cut -c 12-
