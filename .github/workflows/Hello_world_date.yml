@@ -1,0 +1,29 @@
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+  pull_request:
+    branches:
+      - master
+      - develop
+    types:
+      - ready_for_review
+  gollum:
+    types:
+      - created
+      - edited
+      - deleted
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Echo Hello world + date
+        run: echo Hello, world! Today is $NOW
