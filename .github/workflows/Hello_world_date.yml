@@ -1,3 +1,5 @@
+name: Hello_world_date
+
 on:
   issues:
     types:
@@ -24,6 +26,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-      - name: Echo Hello world + date
-        run: echo Hello, world! Today is $NOW
+        run: echo -n "Hello, world! Today is ";date +"%d-%m-%Y %H-%M-%S"
