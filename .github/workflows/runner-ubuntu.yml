@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo $(lsb_release -r)
+        run: echo $(lsb_release -r | awk 'NR>0 {print $NF}')
