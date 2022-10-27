@@ -1,0 +1,23 @@
+name: Os Distrib Version
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ubutu version
+        run: lsb_release -d
+  
+  mac:
+    runs-on: macos-latest
+    steps:
+      - name: mac version
+        run: sw_vers
+        
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: windows version
+        run: ver
