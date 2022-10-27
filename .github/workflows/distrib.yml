@@ -1,0 +1,14 @@
+name: Os Distrib Version
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: [ubuntu-latest, macos-latest, window-latest]
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo -n ubuntu-latest
