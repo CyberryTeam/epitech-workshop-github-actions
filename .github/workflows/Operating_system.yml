@@ -1,0 +1,14 @@
+name: Operating_system
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest, macos-latest, window-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Display the version of each of these virtual environments
+        run: echo -n windows-latest
